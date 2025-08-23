@@ -1,6 +1,6 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "fx-opengraph",
+	"name": "fxopengraph",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-08-16",
   "compatibility_flags": [
