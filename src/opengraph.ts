@@ -18,11 +18,9 @@ export default async function generateOG(result: SuccessResult, url: string, sit
 
   addTag("og:type", "website");
 
-  if (data.ogImage && data.ogImage[0] && /^https?:\/\//.test(data.ogImage[0].url)) {
-    // const encoded = encodeURIComponent(siteUrl);
-    const imageUrl = new URL(`/og-image/${siteUrl}`, url).toString();
-    addTag("og:image", `${imageUrl}`);
-  }
+  // const encoded = encodeURIComponent(siteUrl);
+  const imageUrl = new URL(`/og-image/${siteUrl}`, url).toString();
+  addTag("og:image", `${imageUrl}`);
 
   // favicon
   if (data.favicon) headers.push(`<link rel="icon" href="${data.favicon}">`);
