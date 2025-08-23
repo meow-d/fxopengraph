@@ -21,6 +21,8 @@ export default async function generateOG(result: SuccessResult, url: string, sit
   // const encoded = encodeURIComponent(siteUrl);
   const imageUrl = new URL(`/og-image/${siteUrl}`, url).toString();
   addTag("og:image", `${imageUrl}`);
+  addTag("og:image:width", "1200");
+  addTag("og:image:height", "630");
 
   // favicon
   if (data.favicon) headers.push(`<link rel="icon" href="${data.favicon}">`);
