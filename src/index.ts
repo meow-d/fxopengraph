@@ -11,7 +11,6 @@ const BOT_UA_REGEX = /bot|facebook|embed|got|firefox\/92|firefox\/38|curl|wget|g
 // helpers
 function validUrl(siteUrl: string): boolean {
   try {
-    console.log(siteUrl)
     if (!URL.canParse(siteUrl)) return false;
 
     const url = new URL(siteUrl);

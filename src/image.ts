@@ -13,7 +13,7 @@ export default async function generateImage(result: SuccessResult, url: string, 
 
   const ogHtml = `
     <!-- grr background-image doesn't work!!! -->
-    <img style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; background: #fff;" src="${bgUrl}" alt="Background image">
+    <!-- <img width="1200" height="630" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; background: #fff;" src="${bgUrl}" alt="Background image"> -->
 
     <div style="
       display: flex;
@@ -23,6 +23,7 @@ export default async function generateImage(result: SuccessResult, url: string, 
       width: 100vw;
       font-family: Inter, sans-serif;
       padding: 2em;
+      background: #fff;
       color: #000;
       gap: 2em;
       box-sizing: border-box;
