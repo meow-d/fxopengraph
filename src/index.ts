@@ -50,7 +50,7 @@ export default {
 
     // generate og image
     if (url.pathname.startsWith("/og-image/")) {
-      const siteUrl = url.pathname.substring(10);
+      const siteUrl = decodeURIComponent(url.pathname.substring(10));
       if (!validUrl(siteUrl)) return new Response('Invalid URL', { status: 400 });
       // if (!isBotUA(request)) return Response.redirect(siteUrl, 302);
 
@@ -60,7 +60,7 @@ export default {
     }
 
     // generate og html
-    const siteUrl = url.pathname.substring(1);
+    const siteUrl = decodeURIComponent(url.pathname.substring(1));
     if (!validUrl(siteUrl)) return new Response('Invalid URL', { status: 400 });
     if (!isBotUA(request)) return Response.redirect(siteUrl, 302);
 
