@@ -7,6 +7,14 @@ import generateOG from './opengraph';
 // ripped from FxEmbed's code lol
 const BOT_UA_REGEX = /bot|facebook|embed|got|firefox\/92|firefox\/38|curl|wget|go-http|yahoo|generator|whatsapp|revoltchat|preview|link|proxy|vkshare|images|analyzer|index|crawl|spider|python|node|mastodon|http\.rb|ruby|bun\/|fiddler|iframely|steamchaturllookup|bluesky|matrix-media-repo|cardyb|resolver|util/i
 
+const DISCORD_HEADERS = {
+  headers: {
+    'User-Agent': 'Mozilla/5.0 (compatible; Discordbot/2.0; +https://discordapp.com)',
+    'Accept': 'text/html,application/xhtml+xml',
+    "Accept-Language": "en-US",
+  }
+};
+
 
 // helpers
 function validUrl(siteUrl: string): boolean {
@@ -32,7 +40,7 @@ function isBotUA(request: Request): boolean {
 
 
 async function parse(siteUrl: string) {
-  const response = await fetch(siteUrl);
+  const response = await fetch(siteUrl, DISCORD_HEADERS);
   const responseHtml = await response.text();
   return await ogs({ html: responseHtml });
 }
