@@ -16,13 +16,14 @@ export default async function generateOG(result: SuccessResult, url: string, sit
   if (data.ogUrl) addTag("og:url", data.ogUrl)
   else addTag("og:url", siteUrl);
 
-  addTag("og:type", "website");
+  addTag("og:type", "object");
+  addTag("twitter:card", "summary_large_image")
 
   // const encoded = encodeURIComponent(siteUrl);
   const imageUrl = new URL(`/og-image/${siteUrl}`, url).toString();
   addTag("og:image", `${imageUrl}`);
   addTag("og:image:width", "1200");
-  addTag("og:image:height", "630");
+  addTag("og:image:height", "600");
 
   // favicon
   if (data.favicon) headers.push(`<link rel="icon" href="${data.favicon}">`);
